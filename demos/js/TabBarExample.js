@@ -42,8 +42,8 @@ var TabBarExample = React.createClass({
         >
         <TabBarIOS.Item
           systemIcon="bookmarks"
-
           selected={this.state.selectedTab === 'blueTab'}
+
           onPress={() => {
             this.setState({
               selectedTab: 'blueTab',
@@ -59,7 +59,7 @@ var TabBarExample = React.createClass({
           onPress={() => {
             this.setState({
               selectedTab: 'redTab',
-              notifCount: this.state.notifCount + 1,
+              //notifCount: this.state.notifCount + 1,
             });
           }}>
           {this._renderContent('#783E33', 'Red Tab', this.state.notifCount)}
@@ -75,6 +75,19 @@ var TabBarExample = React.createClass({
             });
           }}>
           {this._renderContent('#21551C', 'Green Tab', this.state.presses)}
+        </TabBarIOS.Item>
+
+        <TabBarIOS.Item
+          systemIcon="favorites"
+
+          selected={this.state.selectedTab === 'whiteTab'}
+          onPress={() => {
+            this.setState({
+              selectedTab: 'whiteTab',
+              presses: this.state.presses + 1
+            });
+          }}>
+          {this._renderContent('#888888', 'White Tab', this.state.presses)}
         </TabBarIOS.Item>
       </TabBarIOS>
     );
